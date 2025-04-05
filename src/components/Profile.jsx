@@ -24,7 +24,7 @@ const Profile = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:5000/profile?user_id=${userId}`
+          `https://data-node.onrender.com/?user_id=${userId}`
         );
 
         // Check if the backend returned an error

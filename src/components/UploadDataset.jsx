@@ -13,7 +13,7 @@ const UploadDataset = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/upload",
+        "https://data-node.onrender.com/upload",
         formData,
         {
           headers: {

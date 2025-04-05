@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
 
   // Create an axios instance with the token in the headers
   const authAxios = axios.create({
-    baseURL: "http://localhost:5000", // Base URL for the backend
+    baseURL: "https://data-node.onrender.com/", // Base URL for the backend
     headers: {
       Authorization: user?.token, // Include the token in the headers
     },

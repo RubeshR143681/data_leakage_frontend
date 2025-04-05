@@ -14,11 +14,14 @@ function Dashboard() {
     const fetchDatasets = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/datasets", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://data-node.onrender.com/datasets",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setDatasets(response.data);
       } catch (err) {
         setError(err.response?.data?.error || "Failed to fetch datasets.");
@@ -44,7 +47,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/upload",
+        "https://data-node.onrender.com/upload",
         formData,
         {
           headers: {
@@ -56,7 +59,7 @@ function Dashboard() {
 
       // Refresh the list of datasets
       const datasetsResponse = await axios.get(
-        "http://localhost:5000/datasets",
+        "https://data-node.onrender.com/datasets",
         {
           headers: {
             Authorization: `Bearer ${token}`,

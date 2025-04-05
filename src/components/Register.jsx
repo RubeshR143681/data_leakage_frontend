@@ -37,12 +37,15 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/register", {
-        username,
-        password,
-        confirm_password: confirmPassword,
-        mobile_number: mobileNumber,
-      });
+      const response = await axios.post(
+        "https://data-node.onrender.com/register",
+        {
+          username,
+          password,
+          confirm_password: confirmPassword,
+          mobile_number: mobileNumber,
+        }
+      );
       setSuccess(response.data.message);
       setTimeout(() => {
         navigate("/login"); // Redirect to the login page after successful registration

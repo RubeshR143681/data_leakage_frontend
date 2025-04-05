@@ -27,10 +27,13 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://data-node.onrender.com/login",
+        {
+          username,
+          password,
+        }
+      );
       login(response.data.token); // Store the token in AuthContext
       navigate("/dashboard"); // Redirect to the Dashboard page
     } catch (error) {
