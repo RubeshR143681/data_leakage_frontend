@@ -34,7 +34,7 @@ const Login = () => {
           password,
         }
       );
-      login(response.data.token); // Store the token in AuthContext
+      login(response.data.token); // Store the ken in AuthContext
       navigate("/dashboard"); // Redirect to the Dashboard page
     } catch (error) {
       setError(error.response?.data?.error || "Login failed");
